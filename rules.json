@@ -1,0 +1,47 @@
+[
+    {
+	"rank": 2,
+        "action": [0, "bonjour"],
+        "regex": "(bonjour|salut|hola|hello)"
+    },
+    {
+	"rank": 1,
+        "action": [0, "bonjourCommentVa"],
+        "regex": "(?:bonjour|salut|hola|hello)[ ,;]+([çc]a va|comment allez-?vous|comment vas-?tu)"
+    },
+    {
+	"rank": 2,
+        "action": [0, "commentVa"],
+        "regex": "(?:[çc]a va|comment allez-?vous|comment vas-?tu)"
+    },
+    {
+	"rank": 1,
+        "action": [0, "aurevoir"],
+        "regex": "(?:au ?revoir|bye|[àa] bient[ôo]t)"
+    },
+    {
+	"rank": 3,
+        "action": [0, "remerciements"],
+        "regex": "merci"
+    },
+    {
+	"rank": 3,
+        "action": [0, "aide"],
+        "regex": "(?:aide[rsz]?|comment|qu'est|pourquoi)"
+    },
+    {
+	"rank": 2,
+        "action": [1, "ville"],
+        "regex": "[\\s\\w]*(?:m[ée]t[ée]o|temps)(?:[\\s\\w-]*(?:[àa]|aux|de)\\s|\\s)([a-zA-Zâàéèùêîôç\\-']+)"
+    },
+    {
+	"rank": 4,
+        "action": [1, "ville"],
+        "regex": "^([a-zA-Zâàéèùêîôç\\-]+)$"
+    },
+    {
+	"rank": 1,
+        "action": [1, "date"],
+        "regex": "demain|aprè[e]s[\\s-]demain|lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche|janvier|fé[e]vrier|mars|avril|mai|juin|juillet|aoû[u]t|septembre|octobre|novembre|dé[e]cembre|(?:(?:0?[1-9]|[12][0-9]|3[01])[\\/\\-](?:0?[1-9]|1[012])[\\/\\-](?:19|20)\\d{2})"
+    }
+]

@@ -1,0 +1,399 @@
+/***** définition de la police spéciale *****/
+
+/* @font-face permet de faire télécharger une police spéciale au navigateur du visiteur. Les fichiers doivent-être présents dans le répertoire du serveur. Plusieurs formats sont fournis pour couvrir les capacités des différents navigateurs (.eot pour IE, .svg pour les iPhones et iPad...). */
+/* la police BebasNeuesRegular est une licence créee par Ryoichi Tsunekawa de Dharma Type (https://dharmatype.com/about), distribuée sous licence OFL (Open Font Licence), disponible sur : https://www.dafont.com/fr/bebas-neue.font */
+
+@font-face {
+    font-family: 'BebasNeueRegular';
+    src: url('polices/BebasNeue-Regular.eot') format('eot'),
+    url('polices/BebasNeue-Regular.eot?#iefix') format('embedded-opentype'),
+    url('polices/BebasNeue-Regular.woff') format('woff'),
+    url('polices/BebasNeue-Regular.ttf') format('truetype'),
+    url('polices/BebasNeue-Regular.otf') format('otf');
+}
+
+/***** paramètress globaux *****/
+
+/* les couleurs sont définies via la propriété rgba (prenant en compte un paramètre de transparence) et la propriété rgb, pour les navigateurs les plus anciens. */
+/* plusieurs polices sont définies, afin de prévoir des solutions alternatives si les premières ne peuvent être chargées par le navigateur. */
+
+body
+{
+    background-color: rgb(249,250,249);
+    margin: 0;
+}
+
+#main_wrapper
+{
+    width:100%;
+    margin:auto;
+}
+
+section
+{
+    position: relative;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+}
+
+#website_title a
+{
+    text-decoration: none;
+    color: rgb(173,53,53);
+    color: rgba(173,53,53,0.90);
+}
+
+h1, h2, p, table
+{
+    color: rgb(97,91,91);
+    font-family: Helvetica, Verdana, sans-serif;
+}
+
+h1
+{
+    font-size: 1.6em;
+    text-align: left;
+}
+
+h2
+{
+    font-size: 1.3em;
+    font-style: oblique;
+    text-align: left;
+}
+    
+p
+{
+    font-family: Helvetica, Verdana, sans-serif;
+    font-size: 1em;
+}
+
+.colored_links
+{
+    color: rgb(63,53,53);
+    color: rgba(244,0,0,0.55);
+    text-decoration: none;
+}
+
+table
+{
+    border-collapse: collapse; /* les bordures des cellules sont fusionnées */
+    caption-side: bottom; /* la propriété caption-side détermine la position de la légende */
+    text-align: left;
+}
+
+th, td
+{
+    border: 1px solid black;
+}
+
+/* le fait de donner à la propriété "max-width" la valeur 100% et à "height" la valeur auto permet d'adapter la taille de l'image à celle du navigateur, tout en empêchant qu'elle devienne plus grande que sa taille originale. */
+img
+{
+    max-width: 100%;
+    height: auto;
+}
+
+/* une icône permet de remonter la page. Elle n'apparaît pas sur les petits périphériques. */
+ #icon_up_img
+{
+    display:none;
+}
+
+/***** barre de navigation *****/
+
+#menu_banner
+{
+    padding: 25px ;
+    padding-left: 35px;
+    margin: 0;
+    cursor: pointer;
+}
+
+#menu_banner.active
+{
+    border-bottom: 1px inset;
+    border-color: rgb(215,222,215);
+    border-color: rgba(215,222,215,0.60);
+}
+ 
+#website_title
+{
+    font-family: BebasNeueRegular, Impact, Verdana, sans-serif;
+    font-size: 2.7em;
+    text-decoration: none;
+    color: rgb(173,53,53);
+    color: rgba(173,53,53,0.90);
+}
+
+/* par défaut, les liens ne sont pas affichés */
+#menu_links
+{
+    display: none;
+}
+
+#menu_links.active
+{
+    display: block;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu_links li
+{
+    font-family: BebasNeueRegular, Impact, Verdana, sans-serif;
+    font-size: 2em;
+    list-style-type: none;
+}
+
+#menu_links li a
+{
+    display: block;
+    padding: 0.3em;
+    padding-left: 45px;
+    border-bottom: 1px inset;
+    border-color: rgb(215,222,215);
+    border-color: rgba(215,222,215,0.60);
+    text-decoration: none;
+    color: rgb(173,53,53);
+    color: rgba(173,53,53,1);
+}
+
+/* un dégradé de couleur est appliqué sur le menu, à partir du côté bas à gauche */
+nav
+{
+    background-image: radial-gradient(circle at bottom left, rgb(249,250,249), rgb(215,222,215));
+}
+
+/* icône "burger" dans le menu. Idée issue de : https://www.w3schools.com/howto/howto_css_menu_icon.asp */
+.burger_line
+{
+    width: 30px;
+    height: 3.5px;
+    background-color: rgb(249,250,249);
+    margin: 6px 0;
+}
+
+#burger_menu
+{
+    position: absolute;
+    top: 31px;
+    right: 40px;
+    cursor: pointer;
+}
+
+/* le dernier élément de la liste n'a pas de bordure inférieure pour ne pas briser l'effet dégradé du menu */
+/* la pseudo-classe :last-of-type permet de cibler le dernier enfant d'un parent : ici, le dernier <li> de l'élément parent #menu_links */
+#menu_links li:last-of-type a
+{
+    border-bottom: none;
+}
+
+/* modification de la couleur des liens du menu au passage de la souris */
+#menu_links li a:hover
+{
+    color: rgb(63,53,53);
+    color: rgba(244,0,0,0.55);
+}
+
+/***** commentaires *****/
+
+#comments_main
+{
+    position: relative;
+    width: 80%;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+}
+
+form
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#comments_header
+{
+    font-style: normal;
+    font-size: 1.2em;
+}
+
+.comments_p
+{
+    font-size: 0.95em;
+}
+
+textarea
+{
+    max-width: 100%;
+}
+
+input
+{
+    max-width: 100%;
+}
+
+#comments_sub
+{
+    max-height: 500px;
+    overflow: scroll; /* si la hauteur maximum est dépassée, une barre de défilement sera mise en place pour parcourir les commentaires. */
+    padding: 10px;
+}
+
+.comment_block
+{
+    max-width: 700px;
+    word-break: break-word; /* permet de couper les mots lorsqu'ils "sortent" du bloc (susceptible d'être le cas pour les URLS par ex). */
+    border-top: 1px inset;
+    border-bottom: 1px inset;
+    border-color: rgb(215,222,215);
+    border-color: rgba(215,222,215,0.50);
+}
+
+/* pour éviter les superpositions de bordures, les .comment_block qui en suivent un autre n'ont pas de bordure supérieure */
+.comment_block + .comment_block
+{
+    border-top: none; 
+    border-bottom: 1px inset;
+    border-color: rgb(215,222,215);
+    border-color: rgba(215,222,215,0.50);
+}
+
+.comment_pseudo
+{
+    color: rgb(63,53,53);
+    color: rgba(244,0,0,0.55);
+}
+
+#comments_errors_form, #comments_errors_display
+{
+    font-family: Helvetica, Verdana, sans-serif;
+    font-size: 0.9em;
+    color: rgb(255,26,26);
+}
+
+/***** footer *****/
+
+footer
+{
+    display: flex; /* utilisation de Flexbox */
+    justify-content: center; /* les éléments du conteneur Flexbox sont centrés sur l'axe secondaire (vertical par défaut) */
+    border-top: 1px inset;
+    border-color: rgb(215,222,215);
+    border-color: rgba(215,222,215,0.60);
+}
+
+.footer_links
+{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.footer_links li
+{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: Helvetica, Verdana, sans-serif;
+    font-size: 0.9em;
+    list-style-type:none;
+}
+
+.footer_text
+{
+    text-decoration: none; 
+    color: rgb(173,53,53);
+    color: rgba(173,53,53,0.90);
+    cursor: pointer;
+}
+
+#dom_to_json_form
+{
+    display: none;
+}
+
+/***** modification de l'affichage sur les grands périphériques *****/
+
+/* les media queries permettent d'appliquer des règles css sous certaines conditions, liées au périphérique de l'utilisateur. En l'occurrence, les règles ci-dessous sont appliquées pour tous les périphériques (dont les écrans) dont la taille dépasse 480px, tels que les écrans de tablettes et d'ordinateurs par exemple (https://openclassrooms.com/fr/courses/1603881-apprenez-a-creer-votre-site-web-avec-html5-et-css3/1607616-utilisez-le-responsive-design-avec-les-media-queries) */
+/* les media queries peuvent également être inclus dans le code html, via l'attribut "media" de la balise <link>, permettant ainsi de charger une stylesheet css ou une autre en fonction du périphérique détecté par l'ordinateur. */
+@media (min-width: 480px)
+{
+    section
+    {
+	width: 75%;
+    }
+
+    #menu_links
+    {
+	display: none;
+    }
+
+    #menu_links.active
+    {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 100%;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+    }
+
+    /* ligne sous la bannière un peu plus transparente */
+    #menu_banner.active
+    {
+	border-bottom: 1px inset;
+	border-color: rgb(215,222,215);
+	border-color: rgba(215,222,215,0.40);
+    }
+
+    #menu_links li a
+    {
+	padding: 0;
+	border-bottom: none;
+    }
+    
+    /* icône permettant de remonter la page */
+    #icon_up
+    {
+	display: flex;
+	position: fixed;	
+	align-items: center;
+	justify-content: center;
+	bottom: 0;
+	right: 0;
+	background-color: rgb(215,222,215);
+	background-color: rgba(215,222,215,0.7);
+	border-radius: 5px 0px 0px 0px;
+	height: 40px;
+	width: 40px;
+    }
+
+    #icon_up_img
+    {
+	display: block;
+	height: 30px;
+	width: 30px;
+    }
+
+}
+
+/* les media queries permettent également de cibler certains périphériques, comme les imprimantes. */
+@media print
+{
+    footer
+    {
+	display: none;
+    }
+
+    #icon_up
+    {
+	display: none;
+    }
+}

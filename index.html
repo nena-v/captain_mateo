@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+  <head>
+    
+    <meta charset="utf-8"/>
+    <title>Captain Matéo</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="chatbot.css" />
+    
+  </head>
+  
+  <body>
+      
+    <section>
+
+   	<div class="chatbot_main">
+
+	  <div class="chatbot_header">
+	    <img id="mr_meteo" src="mr_meteo.png" alt="" />
+	    <h2 class="chatbot_header_txt">Captain Matéo</h2>
+	  </div>
+
+	  <div class="chatbot_exchange">
+
+	    
+	    
+	  </div>
+	    	    
+	  <form action="" method="post">
+	    <p>
+	      <textarea placeholder="Posez-votre question à Captain Matéo" name="user_msg_txt" id="user_msg_txt" rows="5" cols="70" maxlength="600"></textarea> <br />
+	      <div id="msg_errors_form"></div>
+	      <button type="button" id="send_msg_btn" title="Envoyer">Envoyer</button>
+	    </p>
+	  </form>
+
+	  <div id="comments_sub">
+	    <div id="comments_errors_display"></div>
+	  </div>
+
+	</div>
+
+      </section>
+
+      <footer>
+    
+	<ul class="footer_links">
+	  <li><a class="footer_text" href="../mentions_legales.html">Mentions légales</a></li>
+	  <li><a class="footer_text" href="../contact.html">Me contacter</a></li>	
+      </footer>
+
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="fuzzyset.js"></script>
+    <script src="chatbot.js"></script>
+    
+  </body>
+
+</html>
+
+      
